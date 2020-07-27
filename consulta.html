@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+	<div class="container">
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="titulo">Cadastrar Usuário</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group"><label>Nome:</label><input class="form-control" id="nome" type="text" name=""></div>
+						<div class="form-group"><label>CPF:</label><input class="form-control" id="cpf" type="text" name=""></div>
+						<div class="form-group"><label>RG:</label><input class="form-control" id="rg" type="text" name=""></div>
+						<div class="form-group"><label>Nome Mãe:</label><input class="form-control" id="filiacao_Mae" type="text" name=""></div>
+						<div class="form-group"><label>Nome Pai:</label><input class="form-control" id="filiacao_Pai" type="text" name=""></div>
+						<div class="form-group"><label>Data de Nascimento:</label><input class="form-control" id="dataNasc" type="text" name=""></div>
+					</div>
+					<div class="modal-footer">
+						<button id="btnSalvar" class="btn btn-success" onclick="Cadastrar()" >Cadastrar</button>
+						<button id="btnCancelar" class="btn btn-default" onclick="Cancelar()">Cancelar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModalConsulta" tabindex="-1" role="dialog" aria-labelledby="myModalConsultaLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="tituloConsulta"></h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group"><label>Id: </label><label id="idConsulta"></label></div>
+						<div class="form-group"><label>Nome: </label><label id="nomeConsulta"></label></div>
+						<div class="form-group"><label>CPF: </label><label id="cpfConsulta"></label></div>
+						<div class="form-group"><label>RG: </label><label id="rgConsulta"></label></div>
+						<div class="form-group"><label>Nascimento: </label><label id="nascConsulta"></label></div>
+						<div class="form-group"><label>Filiacao Mãe: </label><label id="maeConsulta"></label></div>
+						<div class="form-group"><label>Filiacao Pai: </label><label id="paiConsulta"></label></div>
+						<div class="form-group"><label>Cadastro: </label><label id="cadastroConsulta"></label></div>
+					</div>
+					<div class="modal-footer">
+						<button id="btnOk" class="btn btn-success" onclick="FecharModalConsulta()" >Ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="https://www.great.ufc.br/">Brand</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="cadastro.html">Cadastro <span class="sr-only">(current)</span></a></li>
+						<li><a href="consulta.html">Consulta <span class="sr-only">(current)</span></a></li>
+						<li><a href="https://www.facebook.com/joaovictor.castelo/">Desevolvedor</a></li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+
+		<div class="container">
+
+			<div class="cabecalhoCadastro">
+				<h2 id="titulo">Consultar Usuário</h2>
+
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary pull-right" onclick="GetUsuarios()">Ver Todos
+				</button>	
+			</div>
+			
+			<hr>
+		</div>
+
+		<div class="conteiner">
+			<div class="form-group">
+				<label >Consulte pelo nome ou algum documento:</label><input class="form-control" id="busca" type="text" name="">
+				<button type="button" class ="btn btn-default" onclick="BuscarUsuarios()">Consultar</button>
+
+			</div>
+		</div>
+
+		<table class="table table-striped" >
+			<thead>
+				<tr>
+					<td>Id</td>
+					<td>Nome</td>
+					<td>CPF</td>
+					<td>RG</td>
+					<td>Data de Nascimento</td>
+					<td>Opções</td>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript" src="scripts/scriptCadastro.js"></script>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootbox.min.js"></script>
+
+</body>
+</html>	
